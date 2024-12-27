@@ -8,7 +8,7 @@ const Info = ({ translate }) => {
         <div className="w-full sm:w-[45%] md:w-[30%] h-auto flex flex-col sm:flex-row items-center sm:items-start justify-center gap-4 text-center sm:text-left">
           <div className="w-[60px]">
             <img
-              src="../../../public/images/beach.svg"
+              src="./images/beach.svg"
               className="object-contain max-w-full"
               alt="Beach"
             />
@@ -35,7 +35,7 @@ const Info = ({ translate }) => {
         <div className="w-full sm:w-[45%] md:w-[30%] h-auto flex flex-col sm:flex-row items-center sm:items-start justify-center gap-4 text-center sm:text-left">
           <div className="w-[60px]">
             <img
-              src="../../../public/images/wallet.svg"
+              src="./images/wallet.svg"
               className="object-contain max-w-full"
               alt="Wallet"
             />
@@ -62,7 +62,7 @@ const Info = ({ translate }) => {
         <div className="w-full sm:w-[45%] md:w-[30%] h-auto flex flex-col sm:flex-row items-center sm:items-start justify-center gap-4 text-center sm:text-left">
           <div className="w-[60px]">
             <img
-              src="../../../public/images/suitcase.svg"
+              src="./images/suitcase.svg"
               className="object-contain max-w-full"
               alt="Suitcase"
             />

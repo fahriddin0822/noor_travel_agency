@@ -7,7 +7,7 @@ const About = ({ language }) => {
     {
       icon: (
         <img
-          src="../../../public/images/mountain.svg"
+          src="./images/mountain.svg"
           alt="Mountain icon"
           className="text-indigo-600"
         />
@@ -31,7 +31,7 @@ const About = ({ language }) => {
     {
       icon: (
         <img
-          src="../../../public/images/boat.svg"
+          src="./images/boat.svg"
           alt="Boat icon"
           className="text-indigo-600"
         />
