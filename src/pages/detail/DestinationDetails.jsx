@@ -29,7 +29,7 @@ export const DestinationDetails = ({ language, translate }) => {
       </div>
 
       {/* Welcome Message */}
-      <h2 className="text-3xl font-bold mb-6">
+      <h2 className="text-3xl font-sans mb-6">
         {translate({
           en: `Welcome to ${place}`,
           ru: `Добро пожаловать в ${place}`,
@@ -38,7 +38,7 @@ export const DestinationDetails = ({ language, translate }) => {
       </h2>
 
       {/* Flights Section */}
-      <h3 className="text-2xl font-semibold mb-4">
+      <h3 className="text-2xl font-sans mb-4">
         {translate({ en: "Flights", ru: "Рейсы", uz: "Reyslar" })}
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
@@ -53,7 +53,7 @@ export const DestinationDetails = ({ language, translate }) => {
       </div>
 
       {/* Hotels Section */}
-      <h3 className="text-2xl font-semibold mb-4">
+      <h3 className="text-2xl font-sans mb-4">
         {translate({ en: "Hotels", ru: "Отели", uz: "Mehmonxonalar" })}
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -71,7 +71,7 @@ export const DestinationDetails = ({ language, translate }) => {
       </div>
 
       {/* Booking Form */}
-      <h3 className="text-2xl font-semibold mt-8 mb-4">
+      <h3 className="text-2xl font-sans mt-8 mb-4">
         {translate({ en: "Book a Hotel", ru: "Забронировать отель", uz: "Joy band qilish" })}
       </h3>
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded-sm shadow-md">
