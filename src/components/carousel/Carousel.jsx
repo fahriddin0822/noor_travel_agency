@@ -26,7 +26,7 @@ const Carousel = ({ places, translate }) => {
   };
 
   return (
-    <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[90vh] mb-8 overflow-hidden">
+    <div className="relative w-full mb-0 overflow-hidden">
       <Slider {...settings}>
         {places.map((place) => (
           <div key={place.id} className="relative w-full">
