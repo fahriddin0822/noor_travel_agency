@@ -5,7 +5,7 @@ import { flightsAndHotels, places } from '../../api/data';
 export const DestinationDetails = ({ language, translate }) => {
   const navigate = useNavigate();
   const { place } = useParams();
-  const placeData = places.find(p => (p.name.en) === place);
+  const placeData = places.find((p) => p.name.en === place);
   const sortedHotels = [...(flightsAndHotels[place]?.hotels || [])].sort((a, b) => a.price - b.price);
 
   const [formData, setFormData] = useState({ name: '', phone: '' });
@@ -19,6 +19,8 @@ export const DestinationDetails = ({ language, translate }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowModal(true);
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };
 
   return (
@@ -39,14 +41,14 @@ export const DestinationDetails = ({ language, translate }) => {
 
       {/* Flights Section */}
       <h3 className="text-2xl font-sans mb-4">
-        {translate({ en: "Flights", ru: "Рейсы", uz: "Reyslar" })}
+        {translate({ en: 'Flights', ru: 'Рейсы', uz: 'Reyslar' })}
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         {flightsAndHotels[place]?.flights.map((flight) => (
           <div key={flight.id} className="bg-white rounded-lg shadow-md p-6">
             <h4 className="font-bold text-xl mb-3">{translate(flight.airline)}</h4>
             <p className="text-lg text-indigo-600 font-medium">
-              {`${translate({ en: "Price", ru: "Цена", uz: "Narx" })}: $${flight.price}`}
+              {`${translate({ en: 'Price', ru: 'Цена', uz: 'Narx' })}: $${flight.price}`}
             </p>
           </div>
         ))}
@@ -54,7 +56,7 @@ export const DestinationDetails = ({ language, translate }) => {
 
       {/* Hotels Section */}
       <h3 className="text-2xl font-sans mb-4">
-        {translate({ en: "Hotels", ru: "Отели", uz: "Mehmonxonalar" })}
+        {translate({ en: 'Hotels', ru: 'Отели', uz: 'Mehmonxonalar' })}
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedHotels.map((hotel) => (
@@ -63,7 +65,11 @@ export const DestinationDetails = ({ language, translate }) => {
             <div className="p-6">
               <h4 className="font-bold text-xl mb-2">{translate(hotel.name)}</h4>
               <p className="text-lg text-indigo-600 font-medium">
-                {`${translate({ en: "Price per night", ru: "Цена за ночь", uz: "Bir kunlik narx" })}: $${hotel.price}`}
+                {`${translate({
+                  en: 'Price per night',
+                  ru: 'Цена за ночь',
+                  uz: 'Bir kunlik narx',
+                })}: $${hotel.price}`}
               </p>
             </div>
           </div>
@@ -72,12 +78,12 @@ export const DestinationDetails = ({ language, translate }) => {
 
       {/* Booking Form */}
       <h3 className="text-2xl font-sans mt-8 mb-4">
-        {translate({ en: "Book a Hotel", ru: "Забронировать отель", uz: "Joy band qilish" })}
+        {translate({ en: 'Book a Hotel', ru: 'Забронировать отель', uz: 'Joy band qilish' })}
       </h3>
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded-sm shadow-md">
         <div className="mb-4">
           <label className="block font-medium mb-2">
-            {translate({ en: "Name", ru: "Имя", uz: "Ism" })}
+            {translate({ en: 'Name', ru: 'Имя', uz: 'Ism' })}
           </label>
           <input
             type="text"
@@ -91,7 +97,7 @@ export const DestinationDetails = ({ language, translate }) => {
         </div>
         <div className="mb-4">
           <label className="block font-medium mb-2">
-            {translate({ en: "Phone Number", ru: "Номер телефона", uz: "Telefon raqami" })}
+            {translate({ en: 'Phone Number', ru: 'Номер телефона', uz: 'Telefon raqami' })}
           </label>
           <input
             type="text"
@@ -106,7 +112,7 @@ export const DestinationDetails = ({ language, translate }) => {
           type="submit"
           className="px-4 py-2 bg-lime-700 text-white rounded hover:bg-lime-600"
         >
-          {translate({ en: "Submit", ru: "Отправить", uz: "Yuborish" })}
+          {translate({ en: 'Submit', ru: 'Отправить', uz: 'Yuborish' })}
         </button>
       </form>
 
@@ -115,20 +121,23 @@ export const DestinationDetails = ({ language, translate }) => {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-md text-center">
             <h3 className="text-2xl font-bold mb-4">
-              {translate({ en: "Thank You!", ru: "Спасибо!", uz: "Rahmat!" })}
+              {translate({ en: 'Thank You!', ru: 'Спасибо!', uz: 'Rahmat!' })}
             </h3>
             <p className="text-lg mb-6">
               {translate({
-                en: "Your information has been received. We will contact you soon.",
-                ru: "Ваша информация получена. Мы свяжемся с вами в ближайшее время.",
+                en: 'Your information has been received. We will contact you soon.',
+                ru: 'Ваша информация получена. Мы свяжемся с вами в ближайшее время.',
                 uz: "Ma'lumotlaringiz qabul qilindi. Tez orada siz bilan bog'lanamiz.",
               })}
             </p>
             <button
-              onClick={() => {setShowModal(false); navigate('/')}}
+              onClick={() => {
+                setShowModal(false);
+                navigate('/');
+              }}
               className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-500"
             >
-              {translate({ en: "Close", ru: "Закрыть", uz: "Yopish" })}
+              {translate({ en: 'Close', ru: 'Закрыть', uz: 'Yopish' })}
             </button>
           </div>
         </div>
